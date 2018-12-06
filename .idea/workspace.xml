@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1e8b32b-2e92-4741-a1f1-992cd4885d2f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Fraction/Index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Fraction/Index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -20,8 +18,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Fraction/Index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1265">
-              <caret line="36" selection-start-line="36" selection-end-line="36" />
+            <state relative-caret-position="360">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
                 <element signature="e#1957#2181#0" />
@@ -29,14 +27,20 @@
                 <element signature="e#2320#2391#0" />
                 <element signature="e#2426#2496#0" />
                 <element signature="e#2533#2605#0" />
-                <element signature="e#2628#3708#0" />
-                <element signature="e#3733#4183#0" />
+                <element signature="e#2647#6160#0" />
+                <element signature="e#3742#4208#0" />
+                <element signature="e#4399#4409#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -129,12 +133,12 @@
       <workItem from="1544095091044" duration="697000" />
       <workItem from="1544095845342" duration="289000" />
       <workItem from="1544096164001" duration="8515000" />
-      <workItem from="1544118135067" duration="512000" />
+      <workItem from="1544118135067" duration="12811000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10013000" />
+    <option name="totallyTimeSpent" value="22312000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -184,8 +188,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Fraction/Index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1265">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        <state relative-caret-position="360">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
             <element signature="e#1957#2181#0" />
@@ -193,8 +197,9 @@
             <element signature="e#2320#2391#0" />
             <element signature="e#2426#2496#0" />
             <element signature="e#2533#2605#0" />
-            <element signature="e#2628#3708#0" />
-            <element signature="e#3733#4183#0" />
+            <element signature="e#2647#6160#0" />
+            <element signature="e#3742#4208#0" />
+            <element signature="e#4399#4409#0" />
           </folding>
         </state>
       </provider>

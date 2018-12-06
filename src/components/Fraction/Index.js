@@ -16,6 +16,7 @@ const FractionContainerItems = styled.div`
     background: #483233;
     border-radius: 15px;
 `;
+
 const InputContainer = styled.div`
     width: 160px;
     height: 100px;
@@ -79,7 +80,7 @@ const P = styled.p`
    color: #fff;
    ${ props => props.primary && css`
     margin: 40px 10px 0 5px;
-  `}
+  ` }
 `;
 
 const Select = styled.select`
@@ -91,6 +92,7 @@ const Select = styled.select`
     border: 2px solid #cebeaf;
     font-size: 20px;
 `;
+
 const Option = styled.option`
     font-size: 25px;
     outline: none;
@@ -108,7 +110,8 @@ class Fraction extends Component {
     commonDenominator: '',
     wholeMixed: '',
     numeratorMixed: '',
-    denominatorMixed: ''
+    denominatorMixed: '',
+    addition: '+'
   };
 
   changeNumeratorLeft = (e) => {
@@ -137,58 +140,65 @@ class Fraction extends Component {
 
   addClick = (e) => {
     e.preventDefault();
-    let nok;
-    let bigDenom;
-    let bool;
-    let commonDenom;
-    if (this.state.denominatorLeft > this.state.denominatorRight) {
-      bigDenom = this.state.denominatorLeft;
-      bool = true;
-    } else {
-      bigDenom = this.state.denominatorRight;
-      bool = false;
+
+    let nok = this.state.denominatorLeft * this.state.denominatorRight;
+
+    let additionalLeft = nok / this.state.denominatorLeft;
+
+    let additionalRight = nok / this.state.denominatorRight;
+
+    let numeratorAdditionalLeft = this.state.numeratorLeft * additionalLeft;
+
+    let numeratorAdditionalRight = this.state.numeratorRight * additionalRight;
+
+    let resultNumerator;
+
+    if (this.state.addition === 'addition') {
+      resultNumerator = numeratorAdditionalLeft + numeratorAdditionalRight;
     }
-    let minDenom = bool ? this.state.denominatorRight : this.state.denominatorLeft;
-    for (let i = 2; i <= 90; i++) {
-      commonDenom = bigDenom * i;
-      if (commonDenom % minDenom === 0) {
-        nok = commonDenom;
-        break;
-      }
+    if (this.state.addition === 'subtraction') {
+      resultNumerator = numeratorAdditionalLeft - numeratorAdditionalRight;
     }
-    let result = ((nok / this.state.denominatorLeft) * this.state.numeratorLeft +
-      (nok / this.state.denominatorRight) * this.state.numeratorRight);
-    for (let i = 2; i <= 9; i++) {
-      if (result % i === 0 && nok % i === 0) {
-        result /= i;
-        nok /= i;
-        break;
-      }
+
+    if (this.state.addition === 'multiplication') {
+      let numeratorMultiplicat = this.state.numeratorLeft * this.state.numeratorRight;
+      resultNumerator = numeratorMultiplicat;
     }
+
+    if (this.state.addition === 'division') {
+      let fractionСontraryCrossOne = this.state.numeratorLeft * this.state.denominatorRight;
+      let fractionСontraryCrossTwo = this.state.numeratorRight * this.state.denominatorLeft;
+      nok = fractionСontraryCrossOne;
+      resultNumerator = fractionСontraryCrossTwo;
+    }
+
     this.setState({
       commonDenominator: nok,
-      commonNumerator: result,
+      commonNumerator: resultNumerator,
     });
-    if (result < nok) {
-      console.log('Дробь правильная');
-    } else {
-      console.log('Дробь неправильная');
-    }
   };
 
   wholeClick = (e) => {
     e.preventDefault();
     let whole;
     let topMix;
+
     if (this.state.commonNumerator > this.state.commonDenominator) {
       whole = this.state.commonNumerator / this.state.commonDenominator;
       whole = Math.round(whole);
       topMix = this.state.commonNumerator - this.state.commonDenominator;
     }
+
     this.setState({
       wholeMixed: whole,
       numeratorMixed: topMix,
       denominatorMixed: this.state.commonDenominator
+    })
+  };
+
+  handlerChange = (e) => {
+    this.setState({
+      addition: e.target.value,
     })
   };
 
@@ -205,11 +215,12 @@ class Fraction extends Component {
                      onChange={ this.changeDenominatorLeft }
                      value={ this.state.denominatorLeft }/>
             </InputContainerItems>
-            <Select>
-              <Option>+</Option>
-              <Option>-</Option>
-              <Option>x</Option>
-              <Option>/</Option>
+            <Select value={ this.state.addition } onChange={ this.handlerChange }>
+              <Option></Option>
+              <Option value="addition">+</Option>
+              <Option value="subtraction">-</Option>
+              <Option value="multiplication">x</Option>
+              <Option value="division">/</Option>
             </Select>
             <InputContainerItems>
               <Input className="numeratorRight"
@@ -226,8 +237,8 @@ class Fraction extends Component {
               <P>{ this.state.commonNumerator }</P>
               <P>{ this.state.commonDenominator }</P>
             </Text>
-              { this.state.commonNumerator > this.state.commonDenominator &&
-              <Button onClick={ this.wholeClick }>/</Button> }
+            { this.state.commonNumerator > this.state.commonDenominator &&
+            <Button onClick={ this.wholeClick }>/</Button> }
             <TextMixed>
               { this.state.commonNumerator > this.state.commonDenominator &&
               <P primary>{ this.state.wholeMixed }</P> }
