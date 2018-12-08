@@ -108,6 +108,7 @@ class Fraction extends Component {
     denominatorRight: '',
     commonNumerator: '',
     commonDenominator: '',
+    wholeEqually: '',
     wholeMixed: '',
     numeratorMixed: '',
     denominatorMixed: '',
@@ -151,28 +152,54 @@ class Fraction extends Component {
 
     let numeratorAdditionalRight = this.state.numeratorRight * additionalRight;
 
+    let wholeAdd;
     let resultNumerator;
 
     if (this.state.addition === 'addition') {
       resultNumerator = numeratorAdditionalLeft + numeratorAdditionalRight;
+
+      if (this.state.numeratorLeft === this.state.denominatorLeft && this.state.numeratorRight === this.state.denominatorRight) {
+        wholeAdd = 2;
+        resultNumerator = '';
+        nok = '';
+      }
     }
     if (this.state.addition === 'subtraction') {
       resultNumerator = numeratorAdditionalLeft - numeratorAdditionalRight;
+
+      if (this.state.numeratorLeft === this.state.denominatorLeft && this.state.numeratorRight === this.state.denominatorRight) {
+        wholeAdd = 0;
+        resultNumerator = '';
+        nok = '';
+      }
     }
 
     if (this.state.addition === 'multiplication') {
       let numeratorMultiplicat = this.state.numeratorLeft * this.state.numeratorRight;
       resultNumerator = numeratorMultiplicat;
+
+      if (this.state.numeratorLeft === this.state.denominatorLeft && this.state.numeratorRight === this.state.denominatorRight) {
+        wholeAdd = 1;
+        resultNumerator = '';
+        nok = '';
+      }
     }
 
     if (this.state.addition === 'division') {
       let fractionСontraryCrossOne = this.state.numeratorLeft * this.state.denominatorRight;
       let fractionСontraryCrossTwo = this.state.numeratorRight * this.state.denominatorLeft;
-      nok = fractionСontraryCrossOne;
-      resultNumerator = fractionСontraryCrossTwo;
+      nok = fractionСontraryCrossTwo;
+      resultNumerator = fractionСontraryCrossOne;
+
+      if (this.state.numeratorLeft === this.state.denominatorLeft && this.state.numeratorRight === this.state.denominatorRight) {
+        wholeAdd = 1;
+        resultNumerator = '';
+        nok = '';
+      }
     }
 
     this.setState({
+      wholeEqually: wholeAdd,
       commonDenominator: nok,
       commonNumerator: resultNumerator,
     });
@@ -233,10 +260,13 @@ class Fraction extends Component {
           </InputContainer>
           <ContainerButton>
             <Button onClick={ this.addClick }>=</Button>
-            <Text>
-              <P>{ this.state.commonNumerator }</P>
-              <P>{ this.state.commonDenominator }</P>
-            </Text>
+            <TextMixed>
+              <P primary>{ this.state.wholeEqually }</P>
+              <Text>
+                <P>{ this.state.commonNumerator }</P>
+                <P>{ this.state.commonDenominator }</P>
+              </Text>
+            </TextMixed>
             { this.state.commonNumerator > this.state.commonDenominator &&
             <Button onClick={ this.wholeClick }>/</Button> }
             <TextMixed>

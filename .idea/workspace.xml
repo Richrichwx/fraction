@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f1e8b32b-2e92-4741-a1f1-992cd4885d2f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Fraction/Index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Fraction/Index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -18,18 +19,15 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Fraction/Index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="4">
+              <caret line="191" column="49" selection-start-line="191" selection-start-column="49" selection-end-line="191" selection-end-column="49" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
-                <element signature="e#1957#2181#0" />
-                <element signature="e#2215#2284#0" />
-                <element signature="e#2320#2391#0" />
-                <element signature="e#2426#2496#0" />
-                <element signature="e#2533#2605#0" />
-                <element signature="e#2647#6160#0" />
-                <element signature="e#3742#4208#0" />
-                <element signature="e#4399#4409#0" />
+                <element signature="e#2237#2306#0" />
+                <element signature="e#2342#2413#0" />
+                <element signature="e#2448#2518#0" />
+                <element signature="e#2555#2627#0" />
+                <element signature="e#4686#4750#0" />
               </folding>
             </state>
           </provider>
@@ -133,12 +131,13 @@
       <workItem from="1544095091044" duration="697000" />
       <workItem from="1544095845342" duration="289000" />
       <workItem from="1544096164001" duration="8515000" />
-      <workItem from="1544118135067" duration="12811000" />
+      <workItem from="1544118135067" duration="14576000" />
+      <workItem from="1544275657367" duration="6617000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22312000" />
+    <option name="totallyTimeSpent" value="30694000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -186,20 +185,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/react.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="306" column="8" selection-start-line="306" selection-start-column="8" selection-end-line="306" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Fraction/Index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="4">
+          <caret line="191" column="49" selection-start-line="191" selection-start-column="49" selection-end-line="191" selection-end-column="49" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
-            <element signature="e#1957#2181#0" />
-            <element signature="e#2215#2284#0" />
-            <element signature="e#2320#2391#0" />
-            <element signature="e#2426#2496#0" />
-            <element signature="e#2533#2605#0" />
-            <element signature="e#2647#6160#0" />
-            <element signature="e#3742#4208#0" />
-            <element signature="e#4399#4409#0" />
+            <element signature="e#2237#2306#0" />
+            <element signature="e#2342#2413#0" />
+            <element signature="e#2448#2518#0" />
+            <element signature="e#2555#2627#0" />
+            <element signature="e#4686#4750#0" />
           </folding>
         </state>
       </provider>
